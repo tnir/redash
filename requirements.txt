@@ -20,7 +20,7 @@ aniso8601==3.0.0
 blinker==1.4
 psycopg2==2.7.4
 python-dateutil==2.7.2
-pytz==2016.7
+pytz==2018.4
 redis==2.10.5
 requests==2.11.1
 six==1.10.0
