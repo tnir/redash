@@ -38,7 +38,7 @@ RestrictedPython==3.6.0
 pysaml2==4.5.0
 pycrypto==2.6.1
 funcy==1.10.1
-raven==6.0.0
+raven==6.7.0
 semver==2.2.1
 xlsxwriter==0.9.3
 pystache==0.5.4
