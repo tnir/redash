@@ -1,7 +1,7 @@
 pytest==3.5.1
 pytest-cov==2.5.1
 pytest-watch==4.1.0
-coverage==4.0.3
+coverage==4.5.1
 mock==2.0.0
 
 # PyMongo is needed for one of the unit tests:
