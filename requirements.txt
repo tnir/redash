@@ -21,7 +21,7 @@ blinker==1.4
 psycopg2==2.7.4
 python-dateutil==2.7.2
 pytz==2018.4
-redis==2.10.5
+redis==2.10.6
 requests==2.11.1
 six==1.10.0
 SQLAlchemy==1.1.4
