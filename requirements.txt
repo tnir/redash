@@ -44,7 +44,7 @@ xlsxwriter==1.0.4
 pystache==0.5.4
 parsedatetime==2.4
 cryptography==2.2.2
-simplejson==3.10.0
+simplejson==3.14.0
 ua-parser==0.7.3 
 user-agents==1.1.0
 python-geoip-geolite2==2015.303
