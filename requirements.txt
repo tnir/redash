@@ -33,7 +33,7 @@ honcho==1.0.1
 statsd==3.2.2
 gunicorn==19.7.1
 celery==4.1.0
-jsonschema==2.4.0
+jsonschema==2.6.0
 RestrictedPython==3.6.0
 pysaml2==4.5.0
 pycrypto==2.6.1
