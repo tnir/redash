@@ -42,7 +42,7 @@ raven==6.7.0
 semver==2.7.9
 xlsxwriter==1.0.4
 pystache==0.5.4
-parsedatetime==2.1
+parsedatetime==2.4
 cryptography==2.0.2
 simplejson==3.10.0
 ua-parser==0.7.3 
