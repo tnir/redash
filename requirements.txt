@@ -6,7 +6,7 @@ MarkupSafe==1.1.1
 pyOpenSSL==19.0.0
 httplib2==0.14.0
 wtforms==2.2.1
-Flask-RESTful==0.3.7
+Flask-RESTful==0.3.9
 Flask-Login==0.4.1
 Flask-OAuthLib==0.9.5
 # pin this until https://github.com/lepture/flask-oauthlib/pull/388 is released
