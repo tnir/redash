@@ -8,7 +8,7 @@ httplib2==0.14.0
 wtforms==2.2.1
 Flask-RESTful==0.3.7
 Flask-Login==0.4.1
-Flask-OAuthLib==0.9.5
+Flask-OAuthLib==0.9.6
 # pin this until https://github.com/lepture/flask-oauthlib/pull/388 is released
 requests-oauthlib>=0.6.2,<1.2.0
 Flask-SQLAlchemy==2.4.1
