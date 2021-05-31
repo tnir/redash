@@ -44,7 +44,7 @@ pysaml2==6.1.0
 pycrypto==2.6.1
 funcy==1.13
 sentry-sdk>=0.14.3,<0.15.0
-semver==2.8.1
+semver==2.13.0
 xlsxwriter==1.2.2
 pystache==0.5.4
 parsedatetime==2.4
