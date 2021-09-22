@@ -38,4 +38,4 @@ pyodbc==4.0.28
 trino~=0.305
 cmem-cmempy==21.2.3
 xlrd==2.0.1
-openpyxl==3.0.7
+openpyxl==3.0.9
