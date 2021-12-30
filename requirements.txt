@@ -58,7 +58,7 @@ pypd==1.1.0
 disposable-email-domains>=0.0.52
 gevent==1.4.0
 sshtunnel==0.1.5
-supervisor==4.1.0
+supervisor==4.2.4
 supervisor_checks==0.8.1
 werkzeug==0.16.1
 # Install the dependencies of the bin/bundle-extensions script here.
