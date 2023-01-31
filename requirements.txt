@@ -8,7 +8,7 @@ httplib2==0.14.0
 wtforms==2.2.1
 Flask-RESTful==0.3.7
 Flask-Login==0.4.1
-Flask-SQLAlchemy==2.4.1
+Flask-SQLAlchemy==3.0.3
 Flask-Migrate==2.5.2
 flask-mail==0.9.1
 flask-talisman==0.7.0
