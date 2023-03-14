@@ -33,7 +33,7 @@ phoenixdb==0.7
 certifi>=2019.9.11
 pydgraph==2.0.2
 azure-kusto-data==0.0.35
-pyexasol==0.12.0
+pyexasol==0.25.2
 python-rapidjson==0.8.0
 pyodbc==4.0.28
 trino~=0.305
