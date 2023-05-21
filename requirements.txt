@@ -6,7 +6,7 @@ MarkupSafe==1.1.1
 pyOpenSSL==19.0.0
 httplib2==0.14.0
 wtforms==2.2.1
-Flask-RESTful==0.3.7
+Flask-RESTful==0.3.10
 Flask-Login==0.4.1
 Flask-SQLAlchemy==2.4.1
 Flask-Migrate==2.5.2
