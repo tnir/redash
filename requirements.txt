@@ -11,7 +11,7 @@ Flask-Login==0.4.1
 Flask-SQLAlchemy==2.4.1
 Flask-Migrate==2.5.2
 flask-mail==0.9.1
-flask-talisman==0.7.0
+flask-talisman==1.1.0
 Flask-Limiter==0.9.3
 Flask-WTF==0.14.3
 passlib==1.7.1
