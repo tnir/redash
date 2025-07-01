@@ -3,11 +3,12 @@ on:
   push:
     branches:
       - master
-  pull_request_target:
+  pull_request:
     branches:
       - master
 env:
   NODE_VERSION: 18
+  YARN_VERSION: 1.22.22
 jobs:
   backend-lint:
     runs-on: ubuntu-22.04
@@ -59,15 +60,17 @@ jobs:
           mkdir -p /tmp/test-results/unit-tests
           docker cp tests:/app/coverage.xml ./coverage.xml
           docker cp tests:/app/junit.xml /tmp/test-results/unit-tests/results.xml
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
+      # - name: Upload coverage reports to Codecov
+      #   uses: codecov/codecov-action@v3
+      #   with:
+      #     token: ${{ secrets.CODECOV_TOKEN }}
       - name: Store Test Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: test-results
+          name: backend-test-results
           path: /tmp/test-results
       - name: Store Coverage Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage
           path: coverage.xml
@@ -88,14 +91,14 @@ jobs:
           cache: 'yarn'
       - name: Install Dependencies
         run: |
-          npm install --global --force yarn@1.22.19
+          npm install --global --force yarn@$YARN_VERSION
           yarn cache clean && yarn --frozen-lockfile --network-concurrency 1
       - name: Run Lint
         run: yarn lint:ci
       - name: Store Test Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: test-results
+          name: frontend-test-results
           path: /tmp/test-results
 
   frontend-unit-tests:
@@ -115,7 +118,7 @@ jobs:
           cache: 'yarn'
       - name: Install Dependencies
         run: |
-          npm install --global --force yarn@1.22.19
+          npm install --global --force yarn@$YARN_VERSION
           yarn cache clean && yarn --frozen-lockfile --network-concurrency 1
       - name: Run App Tests
         run: yarn test
@@ -131,9 +134,9 @@ jobs:
       COMPOSE_PROJECT_NAME: cypress
       CYPRESS_INSTALL_BINARY: 0
       PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 1
-      PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
-      CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
-      CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      # PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+      # CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+      # CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
     steps:
       - if: github.event.pull_request.mergeable == 'false'
         name: Exit if PR is not mergeable
@@ -152,7 +155,7 @@ jobs:
           echo "CODE_COVERAGE=true" >> "$GITHUB_ENV"
       - name: Install Dependencies
         run: |
-          npm install --global --force yarn@1.22.19
+          npm install --global --force yarn@$YARN_VERSION
           yarn cache clean && yarn --frozen-lockfile --network-concurrency 1
       - name: Setup Redash Server
         run: |
@@ -168,7 +171,7 @@ jobs:
       - name: Copy Code Coverage Results
         run: docker cp cypress:/usr/src/app/coverage ./coverage || true
       - name: Store Coverage Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage
           path: coverage
